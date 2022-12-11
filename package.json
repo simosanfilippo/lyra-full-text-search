@@ -1,5 +1,26 @@
 {
   "dependencies": {
     "@lyrasearch/lyra": "^0.3.1"
-  }
+  },
+  "name": "lyra-full-text-search",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simosanfilippo/lyra-full-text-search.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/simosanfilippo/lyra-full-text-search/issues"
+  },
+  "homepage": "https://github.com/simosanfilippo/lyra-full-text-search#readme",
+  "description": ""
 }
