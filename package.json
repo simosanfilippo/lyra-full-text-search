@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "@lyrasearch/lyra": "^0.3.1"
+    "@lyrasearch/lyra": "^0.3.1",
+    "@lyrasearch/plugin-data-persistence": "^0.0.4"
   },
   "name": "lyra-full-text-search",
   "version": "1.0.0",

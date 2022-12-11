@@ -1,4 +1,7 @@
 const { create,insertBatch,search,remove } = require('@lyrasearch/lyra') ;
+
+const { persistToFile } = require ('@lyrasearch/plugin-data-persistence')
+
 const toObject =(toBeParsedObject) =>{
     return JSON.parse(JSON.stringify(toBeParsedObject, (key, value) =>
         typeof value === 'bigint'
@@ -48,17 +51,11 @@ const main = async()=>{
             properties: ["title"],
             tolerance: 1
           });
-
+          
           console.log( JSON.stringify (toObject(searchResult)))
 
-          remove(movieDB,searchResult.hits[0].id)
-          const removed = search(movieDB, {
-            term: "Harro",
-            properties: ["title"],
-            tolerance: 1
-          });
+          const filePath = persistToFile(movieDB, 'binary', './movies.msp')
 
-          console.log( JSON.stringify (toObject(removed)))
 }
 
 main()
