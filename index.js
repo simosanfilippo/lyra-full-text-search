@@ -1,6 +1,7 @@
-const { create,insertBatch,search,remove } = require('@lyrasearch/lyra') ;
+import { create,insertBatch,search,remove } from '@lyrasearch/lyra';
 
-const { persistToFile } = require ('@lyrasearch/plugin-data-persistence')
+import { persistToFile } from '@lyrasearch/plugin-data-persistence'
+import { populateFromGlob, defaultHtmlSchema } from "@lyrasearch/plugin-parsedoc";
 
 const toObject =(toBeParsedObject) =>{
     return JSON.parse(JSON.stringify(toBeParsedObject, (key, value) =>
@@ -51,7 +52,7 @@ const main = async()=>{
             properties: ["title"],
             tolerance: 1
           });
-          
+
           console.log( JSON.stringify (toObject(searchResult)))
 
           const filePath = persistToFile(movieDB, 'binary', './movies.msp')

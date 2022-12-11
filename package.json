@@ -1,10 +1,12 @@
 {
   "dependencies": {
     "@lyrasearch/lyra": "^0.3.1",
-    "@lyrasearch/plugin-data-persistence": "^0.0.4"
+    "@lyrasearch/plugin-data-persistence": "^0.0.4",
+    "@lyrasearch/plugin-parsedoc": "^0.0.4"
   },
   "name": "lyra-full-text-search",
   "version": "1.0.0",
+  "type":"module",
   "main": "index.js",
   "devDependencies": {
     "nodemon": "^2.0.20"
