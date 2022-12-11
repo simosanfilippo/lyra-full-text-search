@@ -1,5 +1,11 @@
 const { create,insertBatch,search } = require('@lyrasearch/lyra') ;
-
+const toObject =(toBeParsedObject) =>{
+    return JSON.parse(JSON.stringify(toBeParsedObject, (key, value) =>
+        typeof value === 'bigint'
+            ? value.toString()
+            : value // return everything else unchanged
+    ));
+}
 const main = async()=>{
     const movieDB = create({
         schema: {
@@ -36,6 +42,13 @@ const main = async()=>{
         ];
         
         await insertBatch(movieDB, docs, { batchSize: 500 });
+
+        const searchResult = search(movieDB, {
+            term: "Harry",
+            properties: ["title"],
+          });
+
+          console.log( JSON.stringify (toObject(searchResult)))
 }
 
 main()
