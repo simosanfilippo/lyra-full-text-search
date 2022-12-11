@@ -1,7 +1,6 @@
 import { create,insertBatch,search,remove } from '@lyrasearch/lyra';
-
+import { stemmer } from "@lyrasearch/lyra/dist/esm/stemmer/lib/it.js";
 import { persistToFile } from '@lyrasearch/plugin-data-persistence'
-import { populateFromGlob, defaultHtmlSchema } from "@lyrasearch/plugin-parsedoc";
 
 const toObject =(toBeParsedObject) =>{
     return JSON.parse(JSON.stringify(toBeParsedObject, (key, value) =>
