@@ -44,8 +44,9 @@ const main = async()=>{
         await insertBatch(movieDB, docs, { batchSize: 500 });
 
         const searchResult = search(movieDB, {
-            term: "Harry",
+            term: "Harro",
             properties: ["title"],
+            tolerance: 1
           });
 
           console.log( JSON.stringify (toObject(searchResult)))
